@@ -33,3 +33,13 @@ Once you're in a venv, you can run the tests like so:
 ```
 testslide tests/*.py
 ```
+
+## Run the CLI
+
+Authenticate to Google:
+```
+./pymd2googleslides/main.py auth
+```
+
+Authenticate to Google, allow the app to perform actions on Google slides.
+After this completes, you should have a `token.json` file available
