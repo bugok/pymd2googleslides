@@ -1,0 +1,24 @@
+[project]
+name = "pymd2googleslides"
+version = "0.1.0"
+description = "A Python version of md2googleslides"
+authors = [{ name = "Noam Lerner", email = "noam.lerner@gmail.com" }]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.7"
+
+# Runtime dependencies (installed via pip)
+dependencies = [
+  "click",
+  "marko",
+  "google-api-python-client"
+]
+
+[project.optional-dependencies]
+dev = [
+  "testslide",
+  "pytest"
+]
+
+[project.scripts]
+mycli = "pymd2googleslides.main:main"
