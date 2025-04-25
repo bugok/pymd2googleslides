@@ -25,3 +25,11 @@ Deactivate the venv:
 ```
 deactivate
 ```
+
+## Run tests
+
+Once you're in a venv, you can run the tests like so:
+
+```
+testslide tests/*.py
+```
