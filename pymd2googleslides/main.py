@@ -4,6 +4,9 @@ import click
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 import os
+from marko.md_renderer import MarkdownRenderer
+from marko.parser import Parser
+import marko
 
 SCOPES = ["https://www.googleapis.com/auth/presentations"]
 
@@ -57,6 +60,17 @@ def auth(client_secret_path: str):
     Download the client_secret.json.
     """
     service = get_slides_service(client_secret_path)
+
+
+@cli.command()
+@click.argument(
+    "input_file", type=click.Path(exists=True, readable=True, dir_okay=False)
+)
+def render(input_file: str):
+    markdown = marko.Markdown(Parser, MarkdownRenderer) 
+    with open(input_file) as f:
+        result: str = markdown.convert(f.read())
+        click.echo(result)
 
 
 if __name__ == "__main__":
