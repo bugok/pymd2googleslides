@@ -67,7 +67,7 @@ def auth(client_secret_path: str):
     "input_file", type=click.Path(exists=True, readable=True, dir_okay=False)
 )
 def render(input_file: str):
-    markdown = marko.Markdown(Parser, MarkdownRenderer) 
+    markdown = marko.Markdown(Parser, MarkdownRenderer)
     with open(input_file) as f:
         result: str = markdown.convert(f.read())
         click.echo(result)
