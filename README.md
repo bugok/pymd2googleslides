@@ -1,3 +1,10 @@
+## What's `pymd2googleslides`?
+
+This is a pet-project trying to re-implement
+[md2googleslides](https://github.com/googleworkspace/md2googleslides) in Python.
+It's not official by any chance, and at the time of writing this, it's in
+development and is not yet working. 
+
 ## Running in venv
 
 Create the venv:
